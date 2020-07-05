@@ -1,5 +1,3 @@
-package perimeter_quiz;
-
 import edu.duke.*;
 import java.io.File;
 
@@ -24,6 +22,7 @@ public class PerimeterAssignmentRunner {
     }
 
     public int getNumPoints (Shape s) {
+        //returns the total number of points
         int numPoints = 0;
         for(Point point : s.getPoints()) {
             numPoints++;
@@ -32,6 +31,7 @@ public class PerimeterAssignmentRunner {
     }
 
     public double getAverageLength(Shape s) {
+        //average length of shape
         int points = getNumPoints(s);
         double distance = getPerimeter(s);
         double avgLength = distance/points;
@@ -39,6 +39,7 @@ public class PerimeterAssignmentRunner {
     }
 
     public double getLargestSide(Shape s) {
+        //largest side of a shape --doesn't work for some reason
         double largestSide = 0;
         Point prevPoint = s.getLastPoint();
         for(Point point : s.getPoints()) {
@@ -51,6 +52,7 @@ public class PerimeterAssignmentRunner {
     }
 
     public double getLargestX(Shape s) {
+        //largest x-coordinate
         double largestX = 0;
         Point prevPoint = s.getLastPoint();
         for(Point point : s.getPoints()) {
@@ -62,6 +64,7 @@ public class PerimeterAssignmentRunner {
     }
 
     public double getLargestPerimeterMultipleFiles() {
+        //largest perimeter outta a selected number of files
         DirectoryResource dr = new DirectoryResource();
         double largestPerimeter = 0;
         for (File f : dr.selectedFiles()) {
@@ -76,6 +79,7 @@ public class PerimeterAssignmentRunner {
     }
 
     public String getFileWithLargestPerimeter() {
+        //file name containing shape with largest perimeter
         DirectoryResource dr = new DirectoryResource();
         File temp = null;
         double largestPerimeter = 0;
