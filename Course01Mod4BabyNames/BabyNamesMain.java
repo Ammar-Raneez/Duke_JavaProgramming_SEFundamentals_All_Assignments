@@ -9,6 +9,7 @@ import java.io.*;
 
 public class BabyNamesMain {
     public void printNames () {
+        //print details of babies
         FileResource fr = new FileResource();
         for (CSVRecord rec : fr.getCSVParser(false)) {
             int numBorn = Integer.parseInt(rec.get(2));
@@ -21,6 +22,7 @@ public class BabyNamesMain {
     }
 
     public void totalBirths (FileResource fr) {
+        //total births, males and females, unique names, and total names
         int totalBirths = 0;
         int totalBoys = 0;
         int totalGirls = 0;
@@ -64,6 +66,7 @@ public class BabyNamesMain {
     }
     
     private boolean checkForName(String name, String gender, CSVParser parser){
+        //whether passed name and gender are present in the file
         boolean result = false;
         for (CSVRecord rec: parser){
             
@@ -124,6 +127,7 @@ public class BabyNamesMain {
     }
     
     private String getName(int year, int rank, String gender){
+        //returns name of baby for a passed dob, rank and gender
         String fileName = "data/yob"+year+".csv";
         FileResource fr = new FileResource(fileName);
         CSVParser parser = fr.getCSVParser(false);
@@ -149,6 +153,8 @@ public class BabyNamesMain {
     }
     
     private void whatIsNameInYear(String name, int year, int newYear, String gender){
+        //what the passed name would be if it was a different year
+        //done depending on same ranking
         int rankYourName = getRank(year, name, gender);
         String newName = getName(newYear, rankYourName, gender);
         System.out.println(name+" born in "+year+" would be "+newName+" if she was born in "+newYear);
@@ -160,6 +166,7 @@ public class BabyNamesMain {
     }
     
     public int yearOfHighestRank(String name, String gender){
+        //returns the year that a specified name and gender ranked the highest
         int currentMaxRankYear = -1;
         int currentMaxRank = -1;
         DirectoryResource dr = new DirectoryResource();
@@ -197,6 +204,7 @@ public class BabyNamesMain {
     }
     
     private double getAverageRank(String name, String gender){
+        //gets average rank of the passed name with gender
         double sumOfRank = 0.0;
         double numberOfYears = 0.0;
         double averageRank = -1.0;

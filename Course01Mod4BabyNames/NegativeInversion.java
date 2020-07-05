@@ -12,6 +12,9 @@ import java.io.*;
 
 public class NegativeInversion {
     public ImageResource makeInversion(ImageResource inImage) {
+        //similar to grayscale but rather than setting average
+        //each rgb pixel is set to the value it initially was subtracted
+        //from 255, aka the opposite values
         ImageResource outImage = new ImageResource(inImage.getWidth(), inImage.getHeight());
         
         for(Pixel pixel: outImage.pixels()) {

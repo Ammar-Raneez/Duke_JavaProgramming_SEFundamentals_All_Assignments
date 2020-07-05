@@ -10,6 +10,8 @@ import java.io.*;
 
 public class GreyScale {
     public ImageResource makeGray(ImageResource inImage) {
+        //takes in an imageresource, sets all the pixels rgb values to 
+        //average of the initial total of all, resulting in gray
         ImageResource outImage = new ImageResource(inImage.getWidth(), inImage.getHeight());
         
         for(Pixel pixel: outImage.pixels()) {

@@ -21,6 +21,7 @@ public class BabyBirths {
     }
     
     public void totalBirths(FileResource fr) {
+        //total number of births and of each gender from a specified file
         int totalBirths = 0, totalBoys = 0, totalGirls = 0;
         for(CSVRecord rec: fr.getCSVParser(false)) {
             int numBorn = Integer.parseInt(rec.get(2));
