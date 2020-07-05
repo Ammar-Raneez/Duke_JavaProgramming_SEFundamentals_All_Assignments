@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=EarthQuakeClient2
+comment1.params=
+comment1.target=EarthQuakeClient2()
+comment2.params=quakeData\ f
+comment2.target=java.util.ArrayList\ filter(java.util.ArrayList,\ Filter)
+comment3.params=
+comment3.target=void\ quakesWithFilter()
+comment3.text=public\ void\ quakesWithFilter()\ {\ \r\n\ \ \ \ \ \ \ \ EarthQuakeParser\ parser\ \=\ new\ EarthQuakeParser();\ \r\n\ \ \ \ \ \ \ \ //String\ source\ \=\ "http\://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";\r\n\ \ \ \ \ \ \ \ String\ source\ \=\ "data/nov20quakedatasmall.atom";\r\n\ \ \ \ \ \ \ \ ArrayList<QuakeEntry>\ list\ \ \=\ parser.read(source);\ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ System.out.println("read\ data\ for\ "+list.size()+"\ quakes");\r\n\r\n\ \ \ \ \ \ \ \ //Filter\ f\ \=\ new\ MinMagFilter(4.0);\ \r\n\ \ \ \ \ \ \ \ Filter\ f2\ \=\ new\ MagnitudeFilter(4.0,\ 5.0);\r\n\ \ \ \ \ \ \ \ Filter\ f3\ \=\ new\ DepthFilter(-35000.0,\ -12000.0);\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ ArrayList<QuakeEntry>\ d7\ \=\ filter(list,\ f3);\r\n\ \ \ \ \ \ \ \ ArrayList<QuakeEntry>\ m7\ \ \=\ filter(d7,\ f2);\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ for\ (QuakeEntry\ qe\:\ m7)\ {\ \r\n\ \ \ \ \ \ \ \ \ \ \ \ System.out.println(qe);\r\n\ \ \ \ \ \ \ \ }\ \r\n}
+comment4.params=
+comment4.target=void\ testMatchAllFilter()
+comment5.params=
+comment5.target=void\ testMatchAllFilter2()
+comment6.params=
+comment6.target=void\ createCSV()
+comment7.params=list
+comment7.target=void\ dumpCSV(java.util.ArrayList)
+numComments=8
