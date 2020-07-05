@@ -1,4 +1,4 @@
-package Course01Mod3CountryExport;
+ 
 
 
 /**
@@ -39,9 +39,8 @@ public class Export {
         listExporters(parser, "coffee");
     }
     
-    
-    
     public void countryInfo(CSVParser parser, String country) {
+        //country info for a specified country
         boolean flag = false;
         for(CSVRecord record: parser) {
             String countryy = record.get("Country");
@@ -58,6 +57,7 @@ public class Export {
     }
     
     public void listExportersTwoProducts(CSVParser parser, String exportItem1, String exportItem2) {
+        //exporters that export both the specified items
         for(CSVRecord record: parser) {
             String countryy = record.get("Country");
             String export = record.get("Exports");
@@ -68,6 +68,7 @@ public class Export {
     }
     
     public void numberOfExporters(CSVParser parser, String exportItem) {
+        //total number of exporters for a specified item
         int count = 0;
         for(CSVRecord record: parser) {
             String export = record.get("Exports");
@@ -80,6 +81,7 @@ public class Export {
     }
     
     public void bigExporters(CSVParser parser, String amount) {
+        //export values greater than specified value
         for(CSVRecord record: parser) {
             String value = record.get("Value (dollars)");
             String a = amount.substring(1, amount.length());

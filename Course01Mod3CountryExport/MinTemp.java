@@ -11,6 +11,7 @@ import java.io.*;
 
 public class MinTemp {
     public CSVRecord coldestHourInFile(CSVParser parser) {
+        //returns csvrecord that has the lowest temperature
         CSVRecord lowestSoFar = null;
         
         for(CSVRecord current: parser) {
@@ -28,6 +29,7 @@ public class MinTemp {
     }
     
     public String fileWithColdestTemperature() {
+        //file name holding the csv record that has the lowest temperature
         CSVRecord lowestSoFar = null;
         CSVParser lowestDay = null;
         String file = "";
@@ -56,6 +58,7 @@ public class MinTemp {
     }
     
     public CSVRecord lowestHumidityInFile(CSVParser parser) {
+        //lowest humidity recorded, for a single file
         CSVRecord lowest = null;
         
         for(CSVRecord current: parser) {
@@ -76,6 +79,7 @@ public class MinTemp {
     }
     
     public CSVRecord lowestHumidityMultipleFiles() {
+        //lowest humidity recorded for multiple files
         CSVRecord lowestSoFar = null;
         DirectoryResource dr = new DirectoryResource();
         for(File f: dr.selectedFiles()) {
@@ -96,6 +100,7 @@ public class MinTemp {
     }
     
     public double averageTemperatureInFile(CSVParser parser) {
+        //average temperature recorded for a file
         double totalTemp = 0.0;
         int count = 0;
         for(CSVRecord current: parser) {
@@ -107,6 +112,7 @@ public class MinTemp {
     }
     
     public double averageTemperatureWithHighHumidityInFile(CSVParser parser, int value) {
+        //average temperature for a file that has a largest humidity
         double totalTemp = 0.0;
         int count = 0;
         for(CSVRecord current: parser) {

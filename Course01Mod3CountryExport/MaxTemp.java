@@ -10,28 +10,9 @@ import org.apache.commons.csv.*;
 import java.io.*;
 
 public class MaxTemp {
-    public CSVRecord hottest(CSVParser parser) {
-        CSVRecord largestSoFar = null;
-        
-        for(CSVRecord current: parser) {
-            largestSoFar = getLargest(largestSoFar, current);
-        }
-        return largestSoFar;
-    }
-    
-    public CSVRecord multiple() {
-        CSVRecord largestSoFar = null;
-        DirectoryResource dr = new DirectoryResource();
-        for(File f: dr.selectedFiles()) {
-            FileResource fr = new FileResource(f);
-            CSVRecord current = hottest(fr.getCSVParser());
-            largestSoFar = getLargest(largestSoFar, current);
-        }
-        
-        return largestSoFar;
-    }
-    
     public CSVRecord getLargest(CSVRecord largestSoFar, CSVRecord current) {
+        //returns the csv record that holds the max temperature
+        //parsing due to a string being returned
         if(largestSoFar == null) {
             largestSoFar = current;
         } else {
@@ -41,6 +22,29 @@ public class MaxTemp {
                 largestSoFar = current;
             }                
         }
+        return largestSoFar;
+    }
+    
+    public CSVRecord hottest(CSVParser parser) {
+        //method for a single file
+        CSVRecord largestSoFar = null;
+        
+        for(CSVRecord current: parser) {
+            largestSoFar = getLargest(largestSoFar, current);
+        }
+        return largestSoFar;
+    }
+    
+    public CSVRecord multiple() {
+        //checking for multiple selected files
+        CSVRecord largestSoFar = null;
+        DirectoryResource dr = new DirectoryResource();
+        for(File f: dr.selectedFiles()) {
+            FileResource fr = new FileResource(f);
+            CSVRecord current = hottest(fr.getCSVParser());
+            largestSoFar = getLargest(largestSoFar, current);
+        }
+        
         return largestSoFar;
     }
     
