@@ -43,12 +43,8 @@ public class OOCeaserCipher {
         return encrypted.toString();
     }
     
-    //same method that decrypts the text passing 26-mainKey
-    public String decrypt(String input) {
-        OOCeaserCipher ceaserCipher = new OOCeaserCipher(26-mainKey);
-        return ceaserCipher.encrypt(input);
-    }
-    
+    //method that does the work, pass in the key that is 26-mainKey that
+    //was found - with unknown key
     public String breakCaesarCipher(String input) {
         CaesarCipher cc = new CaesarCipher();
         int foundKey = cc.getKey(input);
@@ -57,6 +53,12 @@ public class OOCeaserCipher {
         OOCeaserCipher oocc = new OOCeaserCipher(26-foundKey);
         String decrypted =  oocc.encrypt(input);
         return decrypted;
+    }
+    
+    //same method that decrypts the text passing 26-mainKey - with known key
+    public String decrypt(String input) {
+        OOCeaserCipher ceaserCipher = new OOCeaserCipher(26-mainKey);
+        return ceaserCipher.encrypt(input);
     }
     
     public void simpleTests() {

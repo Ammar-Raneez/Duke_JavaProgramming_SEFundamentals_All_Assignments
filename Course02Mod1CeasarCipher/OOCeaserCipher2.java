@@ -1,6 +1,6 @@
 
 /**
- * Write a description of OOCeaserCipher2 here.
+ * Same as OOCeasarCipher, but with two key functionality - similar functionality tho.
  * 
  * @author (your name) 
  * @version (a version number or a date)

@@ -51,6 +51,8 @@ public class CaesarCipher {
     }
     
     public String encryptTwoKeys(String input, int key1, int key2) {
+        //takes stringbuilder and modifies it, with a different key 
+        //depending on index
         StringBuilder string = new StringBuilder(input);
         
         for(int i=0; i<string.length(); i++) {
