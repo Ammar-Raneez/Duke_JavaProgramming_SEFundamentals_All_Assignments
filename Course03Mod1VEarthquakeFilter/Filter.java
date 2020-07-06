@@ -1,6 +1,6 @@
 
 /**
- * Write a description of interface Filter here.
+ * Filter interface that has a satisfies method, that returns t/f based on the passed QuakeEntry
  * 
  * @author (your name) 
  * @version (a version number or a date)

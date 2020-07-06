@@ -17,6 +17,7 @@ public class MagnitudeFilter implements Filter {
 
     public String getName(){ return "Magnitude"; }
 
+    //returns t/f based on whether the magnitude is within a range
     public boolean satisfies(QuakeEntry qe) {
         return (qe.getMagnitude() >= minMag && qe.getMagnitude() <= maxMag);
     }

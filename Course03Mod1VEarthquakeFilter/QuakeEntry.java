@@ -1,4 +1,4 @@
-
+//custom data type, implements comparable to be able to use the compareTo method
 public class QuakeEntry implements Comparable<QuakeEntry>{
 	
 	private Location myLocation;
@@ -6,8 +6,7 @@ public class QuakeEntry implements Comparable<QuakeEntry>{
 	private double depth;
 	private double magnitude;
 
-	public QuakeEntry(double lat, double lon, double mag, 
-	                  String t, double d) {
+	public QuakeEntry(double lat, double lon, double mag, String t, double d) {
 		myLocation = new Location(lat,lon);
 		
 		magnitude = mag;

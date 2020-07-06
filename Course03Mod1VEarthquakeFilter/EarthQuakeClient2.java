@@ -7,6 +7,8 @@ public class EarthQuakeClient2 {
     }
 
     public ArrayList<QuakeEntry> filter(ArrayList<QuakeEntry> quakeData, Filter f) { 
+        //filter method, that calls the specific satisifes method based on the type its used to compare
+        //when a magnitude filter is called, satisfies() of magnitudeFilter class is called
         ArrayList<QuakeEntry> answer = new ArrayList<QuakeEntry>();
         for(QuakeEntry qe : quakeData) { 
             if (f.satisfies(qe)) { 
@@ -45,12 +47,12 @@ public class EarthQuakeClient2 {
         
         //Filter f = new MinMagFilter(4.0); 
         //Location location = new Location(39.7392, -104.9903);
-        Filter f2 = new MagnitudeFilter(3.5, 4.5);
+        Filter f2 = new MagnitudeFilter(3.5, 4.5);          //calling the filters implemented
         Filter f3 = new DepthFilter(-55000.0, -20000.0);
         
-        ArrayList<QuakeEntry> d7 = filter(list, f2);
-        ArrayList<QuakeEntry> m7  = filter(d7, f3);
-        
+        ArrayList<QuakeEntry> d7 = filter(list, f2);        //filter method takes quakeEntry list and a Filter object
+        ArrayList<QuakeEntry> m7  = filter(d7, f3);         //in this case it takes the list and f2 filter object, which is an instance of  
+                                                            //MagnitudeFilter() -- polymorphism
         
         for (QuakeEntry qe: m7) { 
             System.out.println(qe);
