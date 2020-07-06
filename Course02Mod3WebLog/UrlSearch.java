@@ -8,6 +8,7 @@ import java.io.File;
  */
 public class UrlSearch {
     public static void main(String[] args){
+        //urlresource, locate specific urls from a list of em
         URLResource ur = new URLResource("https://www.dukelearntoprogram.com//course2/data/manylinks.html");
         for(String s : ur.words()) {
             s = s.toLowerCase();

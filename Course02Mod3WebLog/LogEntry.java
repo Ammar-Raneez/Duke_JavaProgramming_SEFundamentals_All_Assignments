@@ -1,6 +1,6 @@
-package WebLogProgram;
+
 /**
- * Write a description of class LogRecord here.
+ * Custom LogEntry data type.
  * 
  * @author (your name) 
  * @version (a version number or a date)

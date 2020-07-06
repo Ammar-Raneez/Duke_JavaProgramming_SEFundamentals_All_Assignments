@@ -1,6 +1,3 @@
-package WebLogProgram;
-
-
 /**
  * Write a description of class Tester here.
  * 

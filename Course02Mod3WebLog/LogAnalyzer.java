@@ -1,5 +1,3 @@
-package WebLogProgram;
-
 /**
  * Write a description of class LogAnalyzer here.
  * 
