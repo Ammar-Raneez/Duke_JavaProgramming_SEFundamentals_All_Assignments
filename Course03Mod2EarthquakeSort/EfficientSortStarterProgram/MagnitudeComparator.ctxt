@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=MagnitudeComparator
+comment1.params=qe1\ qe2
+comment1.target=int\ compare(QuakeEntry,\ QuakeEntry)
+comment1.text=\ Comparator\ takes\ a\ generic\ type\ so\ that\ for\ any\ data\ type\ it'd\ work.\r\n\ We\ need\ this\ for\ our\ QuakeEntry\ data\ type,\ so\ we\ implement\ it,\ passing\ QuakeEntry,\ in\ order\ to\ make\ it\ work\ for\ out\ data\ type\r\n\ The\ compare()\ method\ in\ the\ Comparator\ interface\ compares\ two\ different\ instances\ of\ classes,\ called\ from\ another\ \r\n\ object\ -\ in\ our\ case,\ the\ Double\ object\ calls\ the\ compare()\ method\r\n\ while\ the\ compareTo()\ method\ compares\ THIS\ object\ with\ the\ other\ (a.compareTo(b)\ -\ means\ compare\ a\ with\ b)\r\n
+numComments=2
