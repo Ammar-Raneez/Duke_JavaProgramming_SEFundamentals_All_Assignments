@@ -1,6 +1,8 @@
-package VigenereProgram;
-
 import edu.duke.*;
+
+/**
+ * Same as the previous, with most common 'e'
+ */
 
 public class CaesarCracker {
     char mostCommon;
