@@ -1,0 +1,59 @@
+// write your code here
+//function to return the highest significant bits of the color value
+//we divide by 16, as for decimal numbers it'd be 100, representing last two places,
+//therefore for binary, it'd be the last 4 1's, representing 16.
+function clearBits(colorBinaryValue) {
+    return Math.floor(colorBinaryValue/16)  * 16;
+}
+
+//function that sets the clearBits value for all the pixels of the main image, so they have only the
+//first two significant digts
+function chop2Hide(image) {
+    for(let pixel of image.values()) {
+        pixel.setRed(clearBits(pixel.getRed()));
+        pixel.setGreen(clearBits(pixel.getGreen()));
+        pixel.setBlue(clearBits(pixel.getBlue()));
+    }
+    return image;
+}
+
+//function that takes the least two significant bits from the image we wanna hide
+//again for decimal if we do 1050 mod 100 we get last two, same for binary, with 16
+function shift(image) {
+    for(let pixel of image.values()) {
+        pixel.setRed(pixel.getRed() % 16);  // "/" works as well
+        pixel.setBlue(pixel.getBlue() % 16);
+        pixel.setGreen(pixel.getGreen() % 16);
+    }
+    return image;
+}
+
+//main runner
+function combine(main, hidden) {
+    let answer = new SimpleImage(main.getWidth(), main.getHeight());        //final image
+    
+    //loop thru the pixels of the final image
+    for(let pixel of answer.values()) {
+        //get corresponding pixels from the main and hidden images from location, to set the new
+        //images value
+        let updatedMainPixel = main.getPixel(pixel.getX(), pixel.getY());   
+        let updatedHiddenPixel = hidden.getPixel(pixel.getX(), pixel.getY());   
+        
+        //the new image is thefore the addition of both, updatedMainPixel holds the most
+        //significant digits of the image we wanna show, and updatedHiddenPixel, the image
+        //we wanna hide
+        pixel.setRed(updatedMainPixel.getRed() + updatedHiddenPixel.getRed());
+        pixel.setGreen(updatedMainPixel.getGreen() + updatedHiddenPixel.getGreen());
+        pixel.setBlue(updatedMainPixel.getBlue() + updatedHiddenPixel.getBlue());
+    }
+    
+    return answer;
+}
+
+
+var main = new SimpleImage("usain.jpg");
+var hide = new SimpleImage("skyline.jpg");
+main = chop2Hide(main);
+hide = shift(hide);
+var final = combine(main, hide);
+print(final)

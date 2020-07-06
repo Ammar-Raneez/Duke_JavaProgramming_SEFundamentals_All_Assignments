@@ -1,0 +1,22 @@
+// write your code here
+let setBlack = pixel => {
+    pixel.setRed(0);
+    pixel.setGreen(0);
+    pixel.setBlue(0);
+}
+
+let addBorder = (image, thickness) => {
+    var img = new SimpleImage(image);
+    
+    for(let pixel of img.values()) {
+        if(pixel.getY() < thickness || pixel.getY() > img.getHeight() - thickness) {
+            setBlack(pixel);
+        }
+        if(pixel.getX() < thickness || pixel.getX() > img.getWidth() - thickness) {
+            setBlack(pixel);
+        }
+    }
+    print(img);
+}
+
+addBorder("smallpanda.png", 10);
