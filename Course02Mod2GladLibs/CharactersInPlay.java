@@ -1,6 +1,3 @@
-package CountWordsArrayList;
-
-
 /**
  * Write a description of CharactersInPlay here.
  * 
@@ -49,6 +46,7 @@ public class CharactersInPlay {
         }
     }
     
+    //characters who have a number of parts within a range
     public void characterWithNumParts(int num1, int num2) {
         for(int i=0; i<names.size(); i++) {
              if(counts.get(i) >= num1 && counts.get(i) <= num2) {

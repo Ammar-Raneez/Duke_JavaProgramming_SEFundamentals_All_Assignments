@@ -1,6 +1,3 @@
-package CountWordsArrayList;
-
-
 /**
  * Find out how many times each word occurs, and
  * in particular the most frequently occurring word.
@@ -50,6 +47,7 @@ public class WordFrequencies
         System.out.println("max word/freq: "+myWords.get(index)+" "+myFreqs.get(index));
     }
    
+    //returns index of most occured element
     public int findIndexOfMax(){
         int max = myFreqs.get(0);
         int maxIndex = 0;

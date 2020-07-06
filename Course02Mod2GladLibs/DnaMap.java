@@ -1,6 +1,3 @@
-package CountWordsArrayList;
-
-
 /**
  * Write a description of DnaMap here.
  * 

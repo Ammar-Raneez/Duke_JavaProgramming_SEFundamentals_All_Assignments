@@ -1,8 +1,5 @@
-package CountWordsArrayList;
-
-
 /**
- * Write a description of WordsInFile here.
+ * Improved version - using hashmaps
  * 
  * @author (your name) 
  * @version (a version number or a date)

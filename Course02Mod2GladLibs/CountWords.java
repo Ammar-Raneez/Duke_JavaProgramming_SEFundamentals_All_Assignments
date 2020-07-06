@@ -1,5 +1,3 @@
-package CountWordsArrayList;
-
 import java.util.*;
 
 import edu.duke.*;
@@ -17,18 +15,20 @@ public class CountWords {
     }
     
     public String getRandomWord(){
-		Random rand = new Random();
-		int choice = rand.nextInt(myWords.size());
-		for(String s : myWords.data()){
-			if (choice == 0) {
-				return s;
-			}
-			choice = choice - 1;
+        //returns a random word from the list of words
+	Random rand = new Random();
+	int choice = rand.nextInt(myWords.size());
+	for(String s : myWords.data()){
+		if (choice == 0) {
+			return s;
 		}
-		return "*** NEVER HAPPENS ***";
+		choice = choice - 1;
+	}
+	return "*** NEVER HAPPENS ***";
 	}
 	
     public void readWords(String source){
+        //import all the words into our list, based on a url or a fileresource
         myWords.clear();
         if (source.startsWith("http")){
             URLResource resource = new URLResource(source);
@@ -45,6 +45,7 @@ public class CountWords {
     }
     
     public boolean contains(String[] list, int size, String word){
+        //t/ f on whether or not element is found
         for(int k=0; k < size; k++){
             if (list[k].equals(word)){
                 return true;
@@ -54,6 +55,7 @@ public class CountWords {
     }
     
     public int countDifferentArray(){
+        //count of distinct elements vARRAY
         int diffCount = 0;
         String[] words = new String[getCount()];
         for(String s : myWords.data()){
@@ -66,6 +68,7 @@ public class CountWords {
     }
     
     public int countDifferentArrayList(){
+        //count of distinct elements vLIST        
         ArrayList<String> words = new ArrayList<String>();
         for(String s : myWords.data()){
             if (! words.contains(s)) {
@@ -85,9 +88,9 @@ public class CountWords {
     }
     
     public String getRandomWord(String[] words) {
-		Random rand = new Random();
-		int index = rand.nextInt(words.length);
-		return words[index];
+	Random rand = new Random();
+	int index = rand.nextInt(words.length);
+	return words[index];
 	}
 	
     public void randomTester(){

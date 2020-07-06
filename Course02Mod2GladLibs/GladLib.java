@@ -1,5 +1,3 @@
-package CountWordsArrayList;
-
 import edu.duke.*;
 import java.util.*;
 
@@ -22,8 +20,10 @@ public class GladLib {
     private static String dataSourceURL = "https://dukelearntoprogram.com/course3/data";
     private static String dataSourceDirectory = "CountWordsArrayList/data";
     
+    //two constructors for either a url or fileresource initialization
     public GladLib(){
         initializeFromSource(dataSourceDirectory);
+ 
         myRandom = new Random();
     }
     
@@ -32,6 +32,7 @@ public class GladLib {
         myRandom = new Random();
     }
     
+    //initialize all files and store em in the instance variables
     private void initializeFromSource(String source) {
         adjectiveList= readIt(source+"/adjective.txt"); 
         nounList = readIt(source+"/noun.txt");
@@ -45,11 +46,13 @@ public class GladLib {
     }
     
     private String randomFrom(ArrayList<String> source){
+        //returns a random word from a specified file
         int index = myRandom.nextInt(source.size());
         return source.get(index);
     }
     
     private String getSubstitute(String label) {
+        //get a random word from a specified file depending on the type
         if (label.equals("country")) {
             return randomFrom(countryList);
         }
@@ -84,6 +87,7 @@ public class GladLib {
     }
     
     private String processWord(String w){
+        //get the phrase that has two angular brackets, and replace it with a random word
         int first = w.indexOf("<");
         int last = w.indexOf(">",first);
         if (first == -1 || last == -1){
@@ -118,6 +122,7 @@ public class GladLib {
     }
     
     private String fromTemplate(String source){
+        //source picker
         String story = "";
         if (source.startsWith("https")) {
             URLResource resource = new URLResource(source);

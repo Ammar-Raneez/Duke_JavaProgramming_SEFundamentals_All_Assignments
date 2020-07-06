@@ -1,5 +1,3 @@
-package CountWordsArrayList;
-
 import edu.duke.*;
 import java.util.*;
 
@@ -25,6 +23,7 @@ public class GladLibMap {
         myRandom = new Random();
     }
     
+    //hashmaps makes it easier to map the each label with their specific list of words
     private void initializeFromSource(String source) {
         String[] labels = {"country", "noun", "animal", "adjective", "name", "color", "timeframe", "verb", "fruit"};
         for(String string : labels){
